@@ -7,6 +7,7 @@ from itertools import compress
 import json
 from json import dumps
 
+# Classification des différents nom de médicaments suivant des publications différentes dans des listes
 def drug_classification(drugs_data, publication_data):
     finaldf = []
     temp = drugs_data['drug'].apply(lambda x: x.strip()).to_list() # We select the name of all the drugs in the Dataframe
@@ -35,6 +36,7 @@ def drug_classification(drugs_data, publication_data):
         finaldf = finaldf + rowf
     return finaldf
 
+# Création du fichier json à partir du DataFramme final
 
 def df_to_json(df,drugs_data):
     json_dict = {}
