@@ -1,0 +1,7 @@
+Dans le cas où les fichiers sont beaucoup plus volumineux (plusieurs To) , il faudrait les stocker dans des systèmes de fichiers distribués (comme Hadoop HDFS) pour faciliter
+l'acquision de ces données.
+Une fois stockées sur HDFS, il est possible de leur appliquer notre code distribué sur des clusters d'ordinateurs au sein desquels chaque nœud possède son propre espace de 
+stockage avec Hadoop Mapreduce. Notre programme est ainsi parallélisé sur plusieurs clusters et les calculs seront reparties sur les machines virtuelles.
+
+Il faut aussi veiller à faire attention aux itérations que l'on fait dans les Dataframes, en général, c'est beaucoup plus performant de tout passer sous format vectorielle puis
+itérer que d'itérer sur le Dataframe tout entier.
